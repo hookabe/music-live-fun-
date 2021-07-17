@@ -1,0 +1,11 @@
+<h1><%= @user.nickname %>さんの情報</h1>
+<p>名前 : <%= @user.nickname %></p>
+<p>プロフィール : <%= @user.profile %></p>
+
+<% if current_user == @user %>
+<div>
+  <%= link_to "ユーザー情報の編集", edit_user_path(current_user.id), method: :get, class: "item-red-btn" %>
+  </div>
+<% end %>
+
+<%= link_to "トップへ戻る", "/",  class: "item-red-btn" %>
